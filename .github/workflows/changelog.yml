@@ -1,16 +1,21 @@
 name: 'Generate Auto Changelog'
-on: push
+
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
     steps:
-    - name: "Generate changelog"
-      uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+    - name: "✏️ Generate changelog"
+      id: generate-changelog
+      uses: heinrichreimer/action-github-changelog-generator@v2.2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        repo:  DmytroDm/Auto_changelog
-        output: CHANGELOG.md
+        onlyLastTag: "true"
+        stripHeaders: "true"
+        stripGeneratorNotice: "true"
     - name: "🖨️ Print changelog to console"
       run: cat CHANGELOG.md
  
