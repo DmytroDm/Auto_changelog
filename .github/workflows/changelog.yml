@@ -1,9 +1,6 @@
 name: 'Generate Auto Changelog'
 
-on:
-    push:
-        branches:
-            - master
+on: push
 
 jobs:
   generate-changelog:
