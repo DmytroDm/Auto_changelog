@@ -1,3 +1,10 @@
+name: default
+
+on:
+  push:
+    branches:
+    - master
+  
 uses: ardalanamini/auto-changelog@v1.1.0
 with:
   token: ${{ secrets.GITHUB_TOKEN }}
