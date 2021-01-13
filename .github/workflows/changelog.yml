@@ -1,9 +1,6 @@
 name: 'Generate Auto Changelog'
 
-on:
-  push:
-    tags:
-      - "v*"
+on: push
 
 jobs:
   generate-changelog:
