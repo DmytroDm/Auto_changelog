@@ -1,4 +1,5 @@
 name: 'Generate Auto Changelog'
+
 on:
     push:
         branches:
