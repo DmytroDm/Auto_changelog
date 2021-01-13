@@ -1,19 +1,20 @@
 name: 'Generate Auto Changelog'
 
-on: push
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
     steps:
-    - name: "✏️ Generate changelog"
+    - name: "Generate changelog"
       id: generate-changelog
       uses: heinrichreimer/action-github-changelog-generator@v2.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: "🖨️ Print changelog to console"
-      run: cat CHANGELOG.md
-    - name: "🚀 Create GitHub release"
+    - name: "Create release"
       uses: actions/create-release@v1.0.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
