@@ -14,5 +14,5 @@ jobs:
             - name: Generate Auto Changelog
               uses: ardalanamini/auto-changelog@v1.1.0
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   exclude: 'perf,other,breaking'
