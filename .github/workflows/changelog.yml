@@ -1,7 +1,5 @@
 name: Build and release
-
 on: push
-
 jobs:
   package:
     runs-on: ubuntu-latest
